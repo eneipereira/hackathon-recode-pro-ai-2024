@@ -1,0 +1,194 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: white;
+}
+
+h1 {
+  margin: 0;
+}
+
+
+main {
+  padding: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.abrigo-lista {
+  padding: 0;
+}
+
+.header-abrigo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+
+  a {
+    color: #eaea76;
+    text-decoration: none;
+  }
+}
+
+.abrigo-item {
+  background-color: #e6f7ff;
+  border-left: 5px solid #0066cc;
+  margin-bottom: 10px;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.abrigo-item.pa { background-color: #ffcccc; }
+.abrigo-item.cs { background-color: #ccffcc; }
+.abrigo-item.pel { background-color: #ccccff; }
+.abrigo-item.sm { background-color: #add8e6; }
+.abrigo-item.can { background-color: #fffacd; }
+.abrigo-item.nh { background-color: #3498db; }
+.abrigo-item.gra { background-color: #ff9f8a; }
+.abrigo-item.via { background-color: #e6e6fa; }
+
+.abrigo-item h2 {
+  margin-top: 0;
+  color: #0066cc;
+}
+
+.abrigo-item p {
+  margin: 5px 0;
+}
+
+.botao-voltar {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background-color: white;
+  border-radius: 50%;
+  color: #4CAF50;
+  font-size: 1.5em;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.botao-voltar:hover {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.cidade {
+  display: none;
+  list-style-type: none;
+}
+
+.detalhes {
+  display: none;
+  
+}
+
+.navegacao {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.navegacao button {
+  padding: 10px 15px;
+  margin-right: 10px;
+  color: rgb(105, 105, 105);
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.navegacao button:hover {
+  color: white;
+}
+
+.navegacao button#pa { background-color: #ffcccc; }
+.navegacao button#pa:hover { background-color: #ff9999; }
+.navegacao button#cs { background-color: #ccffcc; }
+.navegacao button#cs:hover { background-color: #99ff99; }
+.navegacao button#pel { background-color: #ccccff; }
+.navegacao button#pel:hover { background-color: #9999ff; }
+.navegacao button#sm { background-color: #add8e6; }
+.navegacao button#sm:hover { background-color: #87ceeb; }
+.navegacao button#can { background-color: #fffacd; }
+.navegacao button#can:hover { background-color: #ffec8b; }
+.navegacao button#nh { background-color: #3498db; }
+.navegacao button#nh:hover { background-color: #2980b9; }
+.navegacao button#gra { background-color: #ff9f8a; }
+.navegacao button#gra:hover { background-color: #ff7f50; }
+.navegacao button#via { background-color: #e6e6fa; }
+.navegacao button#via:hover { background-color: #d8bfd8; }
+
+.mapa {
+  text-align: center;
+  margin-bottom: 20px;
+  padding: 20px;
+}
+
+.mapa img {
+  max-width: 100%;
+  height: auto;
+}
+
+button.ver-detalhes {
+  background-color: #0066cc;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button.ver-detalhes:hover {
+  background-color: #004d99;
+}
+
+.feedback {
+  margin-top: 10px;
+}
+
+.feedback button {
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+
+  &:nth-child(1) {
+    background-color: #4caf50;
+  }
+
+  &:nth-child(2) {
+    background-color: #c42418;
+    margin-bottom: 5px;
+  }
+}
+
+.feedback button:hover {
+  &:nth-child(1) {
+    background-color: #45a049;
+  }
+
+  &:nth-child(2) {
+    background-color: #a11b0d;
+  }
+}
+
+span.status-abrigo {
+  color: #008000;
+}
+
+#inicio {
+  color: #ffffff;
+  text-decoration: none;
+}

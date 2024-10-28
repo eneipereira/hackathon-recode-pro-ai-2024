@@ -1,0 +1,199 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0px;
+  background-color: white;
+}
+
+div.main-background-cover {
+  background-image:
+      linear-gradient(to bottom, rgb(0, 0, 0, 0.70), rgb(54, 54, 54, 0.20)),
+      url('./img/planta_esperanca.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 20vh;
+  text-align: center;
+  padding: 20vh 0px;
+  color: white;
+}
+
+.main-background-cover a {
+  padding: 12px 16px;
+  font-weight: bold;
+  border-radius: 20px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  color: white;
+}
+
+.grid-container {
+  display: flex;
+}
+
+.grid-container > .column3 {
+  padding: 48px 64px;
+  width: calc(100% / 3);
+}
+
+.grid-container > .column2 {
+  padding: 48px 64px;
+  width: 50%;
+}
+
+.grid-container > .column4 {
+  padding: 48px 64px;
+  width: 25%;
+}
+
+.warning {
+  color: white;
+  background-color: #eaea76;
+}
+
+.success {
+  color: white;
+  background-color: #95ea76;
+}
+
+.alert {
+  color: white;
+  background-color: #ea7676;
+}
+
+.info {
+  color: white;
+  background-color: #7e76ea;
+}
+
+.image-column {
+  margin: calc(48px + 1.34em) 64px;
+  text-align: center;
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+  min-height: 450px;
+}
+
+.img-profalunos {
+  background-image: url('./img/profalunos.webp')
+}
+
+.white-div h1 {
+  color: #eaea76;
+}
+
+.white-div p {
+  color: #1c1c1c; text-align: justify
+}
+
+.sos img {
+  width: 64px;
+  height: 64px;
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
+.sos {
+  margin: 0px;
+  color: #1c1c1c;
+  padding-bottom: 48px;
+}
+
+.sos b {
+  color: #682c2c;
+}
+
+.sos-title {
+  padding-top: 48px;
+  margin: 0px;
+  color: white;
+}
+
+.sos-title h1 {
+  padding-left: 24px;
+}
+
+.sos .column4 {
+  background-color: white;
+  padding: 24px 32px;
+  margin: 24px 32px;
+  border-radius: 20px;
+}
+
+.gradient-div {
+  background-image: linear-gradient(to bottom, rgb(0, 0, 0, 0.70), rgb(54, 54, 54, 0.20));
+  background-color: #ea7676;
+}
+
+.sos button {
+  padding: 12px 16px;
+  font-weight: bold;
+  border-radius: 20px;
+  text-decoration: none;
+  border: none;
+}
+
+.sos a {
+  text-decoration: none;
+  color: white;
+}
+
+.rede-seg-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.rede-seg-title {
+  font-size: 2.5em;
+  color: #0066cc;
+  margin-bottom: 20px;
+}
+
+.rede-seg-description {
+  font-size: 1.2em;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.rede-seg-highlight {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.rede-seg-features {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.feature-item {
+  background-color: #e6f7ff;
+  padding: 20px;
+  margin: 10px;
+  width: 30%;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.feature-item h3 {
+  font-size: 1.5em;
+  color: #0066cc;
+  margin-bottom: 10px;
+}
+
+.feature-item p {
+  font-size: 1.1em;
+  color: #555;
+}
+
+.rede-seg-conclusion {
+  font-size: 1.3em;
+  font-weight: bold;
+  margin-top: 40px;
+  color: #4CAF50;
+}

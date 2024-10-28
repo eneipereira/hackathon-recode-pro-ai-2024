@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapeamento de Abrigos - RS</title>
+    <link rel="icon" href="../../img/logo.png">
+    <link rel="stylesheet" href="mapeamento.css">
+    <link rel="stylesheet" href="../../navbar.css">
+</head>
+
+<body>
+    <div class="navbar">
+        <img src="../../img/logo.png" alt="logo"/>
+        <div class="logo-name">Rede<b>Seg</b></div>
+        <a class="alert" href="../../index.html#sos">S.O.S.</a>
+        <div class="dropdown">
+            <button class="dropbtn">Rede de Solidariedade
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="../comunidade/comunidade.html">Cadastre-se na rede</a>
+                <a href="#">Experiências, histórias e dicas</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Recursos de Emergência
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="./mapeamento.html">Abrigos disponíveis</a>
+                <a href="#">Rotas de fuga</a>
+                <a href="#">Recomendações de segurança</a>
+            </div>
+        </div>
+        <a href="../../index.html">Início</a>
+    </div>
+
+    <header class="header-abrigo">
+        <a href="./mapeamento.html"><h1>Abrigos disponíveis</h1></a>
+    </header>
+
+    <main>
+        <nav class="navegacao">
+            <button type="button" id="pa" onclick="mostrarCidade('porto-alegre')">Porto Alegre</button>
+            <button type="button" id="cs" onclick="mostrarCidade('caxias')">Caxias do Sul</button>
+            <button type="button" id="pel" onclick="mostrarCidade('pelotas')">Pelotas</button>
+            <button type="button" id="sm" onclick="mostrarCidade('santa-maria')">Santa
+                Maria</button>
+            <button type="button" id="can" onclick="mostrarCidade('canoas')">Canoas</button>
+            <button type="button" id="nh" onclick="mostrarCidade('novo-hamburgo')">Novo
+                Hamburgo</button>
+            <button type="button" id="gra" onclick="mostrarCidade('gravatai')">Gravataí</button>
+            <button type="button" id="via" onclick="mostrarCidade('viamao')">Viamão</button>
+        </nav>
+
+        <div class="mapa">
+            <h2>Mapa dos Abrigos</h2>
+            <img id="mapa-rs" src="../../img/rs.png" usemap="#mapaRS" alt="Mapa do Rio Grande do Sul" width="450" height="450">
+        </div>
+
+        <ul id="abrigo-lista">
+            <li class="cidade porto-alegre">
+                <div class="abrigo-item pa" data-cidade="Porto Alegre" data-nome="Escola Municipal João de Barro">
+                    <h2>Escola Municipal João de Barro</h2>
+                    <button type="button" class="ver-detalhes" onclick="mostrarDetalhes(this)">Ver mais</button>
+                    <div class="detalhes">
+                        <p><strong>Endereço:</strong> Rua das Flores, 123, Porto Alegre</p>
+                        <p><strong>Capacidade:</strong> 100 pessoas</p>
+                        <p><strong>Contato:</strong> (51) 1234-5678</p>
+                        <div class="feedback">
+                            <button type="button" onclick="marcarStatus('disponivel', this)">Disponível</button>
+                            <button type="button" onclick="marcarStatus('lotado', this)">Lotado</button>
+                            <p><strong>Status:</strong> <span class="status-abrigo">Disponível</span></p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li class="cidade porto-alegre">
+                <div class="abrigo-item pa" data-cidade="Porto Alegre" data-nome="Centro Comunitário Porto Alegre">
+                    <h2>Centro Comunitário Porto Alegre</h2>
+                    <button type="button" class="ver-detalhes" onclick="mostrarDetalhes(this)">Ver mais</button>
+                    <div class="detalhes">
+                        <p><strong>Endereço:</strong> Rua Esperança, 234, Porto Alegre</p>
+                        <p><strong>Capacidade:</strong> 120 pessoas</p>
+                        <p><strong>Contato:</strong> (51) 9876-5432</p>
+                        <div class="feedback">
+                            <button type="button" onclick="marcarStatus('disponivel', this)">Disponível</button>
+                            <button type="button" onclick="marcarStatus('lotado', this)">Lotado</button>
+                            <p><strong>Status:</strong> <span class="status-abrigo">Disponível</span></p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="cidade porto-alegre">
+                <div class="abrigo-item pa" data-cidade="Porto Alegre" data-nome="Ginásio Municipal Porto Alegre">
+                    <h2>Ginásio Municipal Porto Alegre</h2>
+                    <button type="button" class="ver-detalhes" onclick="mostrarDetalhes(this)">Ver mais</button>
+                    <div class="detalhes">
+                        <p><strong>Endereço:</strong> Av. Central, 456, Porto Alegre</p>
+                        <p><strong>Capacidade:</strong> 140 pessoas</p>
+                        <p><strong>Contato:</strong> (51) 8765-4321</p>
+                        <div class="feedback">
+                            <button type="button" onclick="marcarStatus('disponivel', this)">Disponível</button>
+                            <button type="button" onclick="marcarStatus('lotado', this)">Lotado</button>
+                            <p><strong>Status:</strong> <span class="status-abrigo">Disponível</span></p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="cidade porto-alegre">
+                <div class="abrigo-item pa" data-cidade="Porto Alegre" data-nome="Escola Estadual Porto Alegre">
+                    <h2>Escola Estadual Porto Alegre</h2>
+                    <button type="button" class="ver-detalhes" onclick="mostrarDetalhes(this)">Ver mais</button>
+                    <div class="detalhes">
+                        <p><strong>Endereço:</strong> Rua da Liberdade, 567, Porto Alegre</p>
+                        <p><strong>Capacidade:</strong> 110 pessoas</p>
+                        <p><strong>Contato:</strong> (51) 4321-8765</p>
+                        <div class="feedback">
+                            <button type="button" onclick="marcarStatus('disponivel', this)">Disponível</button>
+                            <button type="button" onclick="marcarStatus('lotado', this)">Lotado</button>
+                            <p><strong>Status:</strong> <span class="status-abrigo">Disponível</span></p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="cidade porto-alegre">
+                <div class="abrigo-item pa" data-cidade="Porto Alegre" data-nome="Centro Esportivo Porto Alegre">
+                    <h2>Centro Esportivo Porto Alegre</h2>
+                    <button type="button" class="ver-detalhes" onclick="mostrarDetalhes(this)">Ver mais</button>
+                    <div class="detalhes">
+                        <p><strong>Endereço:</strong> Rua dos Atletas, 789, Porto Alegre</p>
+                        <p><strong>Capacidade:</strong> 160 pessoas</p>
+                        <p><strong>Contato:</strong> (51) 1234-9876</p>
+                        <div class="feedback">
+                            <button type="button" onclick="marcarStatus('disponivel', this)">Disponível</button>
+                            <button type="button" onclick="marcarStatus('lotado', this)">Lotado</button>
+                            <p><strong>Status:</strong> <span class="status-abrigo">Disponível</span></p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li class="cidade caxias">
+                <div class="abrigo-item cs" data-cidade="Caxias do Sul" data-nome="Centro Comunitário São Jorge">
+                    <h2>Centro de Eventos Caxias</h2>
+                    <button type="button" class="ver-detalhes" onclick="mostrarDetalhes(this)">Ver mais</button>
+                    <div class="detalhes">
+                        <p><strong>Endereço:</strong> Av. Central, 456, Caxias do Sul</p>
+                        <p><strong>Capacidade:</strong> 200 pessoas</p>
+                        <p><strong>Contato:</strong> (54) 8765-4321</p>
+                        <div class="feedback">
+                            <button type="button" onclick="marcarStatus('disponivel', this)">Disponível</button>
+                            <button type="button" onclick="marcarStatus('lotado', this)">Lotado</button>
+                            <p><strong>Status:</strong> <span class="status-abrigo">Disponível</span></p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li class="cidade caxias">
+                <div class="abrigo-item cs" data-cidade="Caxias do Sul" data-nome="Escola Municipal Caxias">
+                    <h2>Escola Municipal Caxias</h2>
+                    <button type="button" class="ver-detalhes" onclick="mostrarDetalhes(this)">Ver mais</button>
+                    <div class="detalhes">
+                        <p><strong>Endereço:</strong> Rua Principal, 789, Caxias do Sul</p>
+                        <p><strong>Capacidade:</strong> 130 pessoas</p>
+                        <p><strong>Contato:</strong> (54) 9876-5432</p>
+                        <div class="feedback">
+                            <button type="button" onclick="marcarStatus('disponivel', this)">Disponível</button>
+                            <button type="button" onclick="marcarStatus('lotado', this)">Lotado</button>
+                            <p><strong>Status:</strong> <span class="status-abrigo">Disponível</span></p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="cidade caxias">
+                <div class="abrigo-item cs" data-cidade="Caxias do Sul" data-nome="Ginásio Esportivo Caxias">
+                    <h2>Ginásio Esportivo Caxias</h2>
+                    <button type="button" class="ver-detalhes" onclick="mostrarDetalhes(this)">Ver mais</button>
+                    <div class="detalhes">
+                        <p><strong>Endereço:</strong> Av. Esportes, 654, Caxias do Sul</p>
+                        <p><strong>Capacidade:</strong> 170 pessoas</p>
+                        <p><strong>Contato:</strong> (54) 7654-3210</p>
+                        <div class="feedback">
+                            <button type="button" onclick="marcarStatus('disponivel', this)">Disponível</button>
+                            <button type="button" onclick="marcarStatus('lotado', this)">Lotado</button>
+                            <p><strong>Status:</strong> <span class="status-abrigo">Disponível</span></p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="cidade caxias">
+                <div class="abrigo-item cs" data-cidade="Caxias do Sul" data-nome="Centro Cultural Caxias">
+                    <h2>Centro Cultural Caxias</h2>
+                    <button type="button" class="ver-detalhes" onclick="mostrarDetalhes(this)">Ver mais</button>
+                    <div class="detalhes">
+                        <p><strong>Endereço:</strong> Rua das Artes, 321, Caxias do Sul</p>
+                        <p><strong>Capacidade:</strong> 150 pessoas</p>
+                        <p><strong>Contato:</strong> (54) 6543-2109</p>
+                        <div class="feedback">
+                            <button type="button" onclick="marcarStatus('disponivel', this)">Disponível</button>
+                            <button type="button" onclick="marcarStatus('lotado', this)">Lotado</button>
+                            <p><strong>Status:</strong> <span class="status-abrigo">Disponível</span></p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="cidade caxias">
+                <div class="abrigo-item cs" data-cidade="Caxias do Sul" data-nome="Escola Estadual Caxias">
+                    <h2>Escola Estadual Caxias</h2>
+                    <button type="button" class="ver-detalhes" onclick="mostrarDetalhes(this)">Ver mais</button>
+                    <div class="detalhes">
+                        <p><strong>Endereço:</strong> Rua Nova, 432, Caxias do Sul</p>
+                        <p><strong>Capacidade:</strong> 180 pessoas</p>
+                        <p><strong>Contato:</strong> (54) 5432-1098</p>
+                        <div class="feedback">
+                            <button type="button" onclick="marcarStatus('disponivel', this)">Disponível</button>
+                            <button type="button" onclick="marcarStatus('lotado', this)">Lotado</button>
+                            <p><strong>Status:</strong> <span class="status-abrigo">Disponível</span></p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li class="cidade pelotas">
+                <div class="abrigo-item pel" data-cidade="Pelotas" data-nome="Centro de Eventos da Cidade">
+                    <h2>Centro de Eventos de Pelotas</h2>
+                    <button type="button" class="ver-detalhes" onclick="mostrarDetalhes(this)">Ver mais</button>
+                    <div class="detalhes">
+                        <p><strong>Endereço:</strong> Avenida Ferreira Viana, 1000, Pelotas</p>
+                        <p><strong>Capacidade:</strong> 150 pessoas</p>
+                        <p><strong>Contato:</strong> (53) 2345-6789</p>
+                        <div class="feedback">
+                            <button type="button" onclick="marcarStatus('disponivel', this)">Disponível</button>
+                            <button type="button" onclick="marcarStatus('lotado', this)">Lotado</button>
+                            <p><strong>Status:</strong> <span class="status-abrigo">Disponível</span></p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li class="cidade pelotas">
+                <div class="abrigo-item pel" data-cidade="Pelotas" data-nome="Ginásio Municipal de Pelotas">
+                    <h2>Ginásio Municipal de Pelotas</h2>
+                    <button type="button" class="ver-detalhes" onclick="mostrarDetalhes(this)">Ver mais</button>
+                    <div class="detalhes">
+                        <p><strong>Endereço:</strong> Rua do Atleta, 789, Pelotas</p>
+                        <p><strong>Capacidade:</strong> 150 pessoas</p>
+                        <p><strong>Contato:</strong> (53) 9876-5432</p>
+                        <div class="feedback">
+                            <button type="button" onclick="marcarStatus('disponivel', this)">Disponível</button>
+                            <button type="button" onclick="marcarStatus('lotado', this)">Lotado</button>
+                            <p><strong>Status:</strong> <span class="status-abrigo">Disponível</span></p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li class="cidade pelotas">
+                <div class="abrigo-item pel" data-cidade="Pelotas" data-nome="Escola Municipal de Pelotas">
+                    <h2>Escola Municipal de Pelotas</h2>
+                    <button type="button" class="ver-detalhes" onclick="mostrarDetalhes(this)">Ver mais</button>
+                    <div class="detalhes">
+                        <p><strong>Endereço:</strong> Rua das Palmeiras, 45, Pelotas</p>
+                        <p><strong>Capacidade:</strong> 110 pessoas</p>
+                        <p><strong>Contato:</strong> (53) 4321-8765</p>
+                        <div class="feedback">
+                            <button type="button" onclick="marcarStatus('disponivel', this)">Disponível</button>
+                            <button type="button" onclick="marcarStatus('lotado', this)">Lotado</button>
+                            <p><strong>Status:</strong> <span class="status-abrigo">Disponível</span></p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li class="cidade pelotas">
+                <div class="abrigo-item pel" data-cidade="Pelotas" data-nome="Centro Comunitário de Pelotas">
+                    <h2>Centro Comunitário de Pelotas</h2>
+                    <button type="button" class="ver-detalhes" onclick="mostrarDetalhes(this)">Ver mais</button>
+                    <div class="detalhes">
+                        <p><strong>Endereço:</strong> Av. Independência, 123, Pelotas</p>
+                        <p><strong>Capacidade:</strong> 130 pessoas</p>
+                        <p><strong>Contato:</strong> (53) 9876-5432</p>
+                        <div class="feedback">
+                            <button type="button" onclick="marcarStatus('disponivel', this)">Disponível</button>
+                            <button type="button" onclick="marcarStatus('lotado', this)">Lotado</button>
+                            <p><strong>Status:</strong> <span class="status-abrigo">Disponível</span></p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li class="cidade pelotas">
+                <div class="abrigo-item pel" data-cidade="Pelotas" data-nome="Ginásio Esportivo Pelotas">
+                    <h2>Ginásio Esportivo Pelotas</h2>
+                    <button type="button" class="ver-detalhes" onclick="mostrarDetalhes(this)">Ver mais</button>
+                    <div class="detalhes">
+                        <p><strong>Endereço:</strong> Rua da Vitória, 67, Pelotas</p>
+                        <p><strong>Capacidade:</strong> 150 pessoas</p>
+                        <p><strong>Contato:</strong> (53) 6543-2109</p>
+                        <div class="feedback">
+                            <button type="button" onclick="marcarStatus('disponivel', this)">Disponível</button>
+                            <button type="button" onclick="marcarStatus('lotado', this)">Lotado</button>
+                            <p><strong>Status:</strong> <span class="status-abrigo">Disponível</span></p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li class="cidade santa-maria">
+                <div class="abrigo-item sm" data-cidade="Santa Maria" data-nome="Escola Estadual Santa Maria">
+                    <h2>Escola Fundamental Santa Maria</h2>
+                    <button type="button" class="ver-detalhes" onclick="mostrarDetalhes(this)">Ver mais</button>
+                    <div class="detalhes">
+                        <p><strong>Endereço:</strong> Av. Independência, 123, Santa Maria</p>
+                        <p><strong>Capacidade:</strong> 120 pessoas</p>
+                        <p><strong>Contato:</strong> (55) 3456-7890</p>
+                        <div class="feedback">
+                            <button type="button" onclick="marcarStatus('disponivel', this)">Disponível</button>
+                            <button type="button" onclick="marcarStatus('lotado', this)">Lotado</button>
+                            <p><strong>Status:</strong> <span class="status-abrigo">Disponível</span></p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="cidade santa-maria">
+                <div class="abrigo-item sm" data-cidade="Santa Maria" data-nome="Escola Estadual de Santa Maria">
+                    <h2>Escola Estadual de Santa Maria</h2>
+                    <button type="button" class="ver-detalhes" onclick="mostrarDetalhes(this)">Ver mais</button>
+                    <div class="detalhes">
+                        <p><strong>Endereço:</strong> Rua Dom Pedro, 98, Santa Maria</p>
+                        <p><strong>Capacidade:</strong> 120 pessoas</p>
+                        <p><strong>Contato:</strong> (55) 3231-1234</p>
+                        <div class="feedback">
+                            <button type="button" onclick="marcarStatus('disponivel', this)">Disponível</button>
+                            <button type="button" onclick="marcarStatus('lotado', this)">Lotado</button>
+                            <p><strong>Status:</strong> <span class="status-abrigo">Disponível</span></p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="cidade santa-maria">
+                <div class="abrigo-item sm" data-cidade="Santa Maria" data-nome="Centro Comunitário Santa Maria">
+                    <h2>Centro Comunitário Santa Maria</h2>
+                    <button type="button" class="ver-detalhes" onclick="mostrarDetalhes(this)">Ver mais</button>
+                    <div class="detalhes">
+                        <p><strong>Endereço:</strong> Av. Liberdade, 456, Santa Maria</p>
+                        <p><strong>Capacidade:</strong> 140 pessoas</p>
+                        <p><strong>Contato:</strong> (55) 3321-5678</p>
+                        <div class="feedback">
+                            <button type="button" onclick="marcarStatus('disponivel', this)">Disponível</button>
+                            <button type="button" onclick="marcarStatus('lotado', this)">Lotado</button>
+                            <p><strong>Status:</strong> <span class="status-abrigo">Disponível</span></p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="cidade santa-maria">
+                <div class="abrigo-item sm" data-cidade="Santa Maria" data-nome="Ginásio Poliesportivo Santa Maria">
+                    <h2>Ginásio Poliesportivo Santa Maria</h2>
+                    <button type="button" class="ver-detalhes" onclick="mostrarDetalhes(this)">Ver mais</button>
+                    <div class="detalhes">
+                        <p><strong>Endereço:</strong> Rua Esperança, 789, Santa Maria</p>
+                        <p><strong>Capacidade:</strong> 160 pessoas</p>
+                        <p><strong>Contato:</strong> (55) 3345-6789</p>
+                        <div class="feedback">
+                            <button type="button" onclick="marcarStatus('disponivel', this)">Disponível</button>
+                            <button type="button" onclick="marcarStatus('lotado', this)">Lotado</button>
+                            <p><strong>Status:</strong> <span class="status-abrigo">Disponível</span></p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="cidade santa-maria">
+                <div class="abrigo-item sm" data-cidade="Santa Maria" data-nome="Escola Técnica Santa Maria">
+                    <h2>Escola Técnica Santa Maria</h2>
+                    <button type="button" class="ver-detalhes" onclick="mostrarDetalhes(this)">Ver mais</button>
+                    <div class="detalhes">
+                        <p><strong>Endereço:</strong> Av. São João, 1010, Santa Maria</p>
+                        <p><strong>Capacidade:</strong> 180 pessoas</p>
+                        <p><strong>Contato:</strong> (55) 3355-7890</p>
+                        <div class="feedback">
+                            <button type="button" onclick="marcarStatus('disponivel', this)">Disponível</button>
+                            <button type="button" onclick="marcarStatus('lotado', this)">Lotado</button>
+                            <p><strong>Status:</strong> <span class="status-abrigo">Disponível</span></p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li class="cidade canoas">
+                <div class="abrigo-item can" data-cidade="Canoas" data-nome="Centro Comunitário Canoas">
+                    <h2>Centro Comunitário Canoas</h2>
+                    <button type="button" class="ver-detalhes" onclick="mostrarDetalhes(this)">Ver mais</button>
+                    <div class="detalhes">
+                        <p><strong>Endereço:</strong> Rua Esperança, 789, Canoas</p>
+                        <p><strong>Capacidade:</strong> 180 pessoas</p>
+                        <p><strong>Contato:</strong> (51) 7654-3210</p>
+                        <div class="feedback">
+                            <button type="button" onclick="marcarStatus('disponivel', this)">Disponível</button>
+                            <button type="button" onclick="marcarStatus('lotado', this)">Lotado</button>
+                            <p><strong>Status:</strong> <span class="status-abrigo">Disponível</span></p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li class="cidade canoas">
+                <div class="abrigo-item can" data-cidade="Canoas" data-nome="Escola Municipal de Canoas">
+                    <h2>Escola Municipal de Canoas</h2>
+                    <button type="button" class="ver-detalhes" onclick="mostrarDetalhes(this)">Ver mais</button>
+                    <div class="detalhes">
+                        <p><strong>Endereço:</strong> Rua Oliveira, 210, Canoas</p>
+                        <p><strong>Capacidade:</strong> 150 pessoas</p>
+                        <p><strong>Contato:</strong> (51) 3225-7890</p>
+                        <div class="feedback">
+                            <button type="button" onclick="marcarStatus('disponivel', this)">Disponível</button>
+                            <button type="button" onclick="marcarStatus('lotado', this)">Lotado</button>
+                            <p><strong>Status:</strong> <span class="status-abrigo">Disponível</span></p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li class="cidade canoas">
+                <div class="abrigo-item can" data-cidade="Canoas" data-nome="Centro Comunitário Canoas">
+                    <h2>Centro Comunitário Canoas</h2>
+                    <button type="button" class="ver-detalhes" onclick="mostrarDetalhes(this)">Ver mais</button>
+                    <div class="detalhes">
+                        <p><strong>Endereço:</strong> Av. Brasil, 300, Canoas</p>
+                        <p><strong>Capacidade:</strong> 130 pessoas</p>
+                        <p><strong>Contato:</strong> (51) 3226-2345</p>
+                        <div class="feedback">
+                            <button type="button" onclick="marcarStatus('disponivel', this)">Disponível</button>
+                            <button type="button" onclick="marcarStatus('lotado', this)">Lotado</button>
+                            <p><strong>Status:</strong> <span class="status-abrigo">Disponível</span></p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li class="cidade canoas">
+                <div class="abrigo-item can" data-cidade="Canoas" data-nome="Ginásio Esportivo Canoas">
+                    <h2>Ginásio Esportivo Canoas</h2>
+                    <button type="button" class="ver-detalhes" onclick="mostrarDetalhes(this)">Ver mais</button>
+                    <div class="detalhes">
+                        <p><strong>Endereço:</strong> Rua São José, 450, Canoas</p>
+                        <p><strong>Capacidade:</strong> 180 pessoas</p>
+                        <p><strong>Contato:</strong> (51) 3227-6789</p>
+                        <div class="feedback">
+                            <button type="button" onclick="marcarStatus('disponivel', this)">Disponível</button>
+                            <button type="button" onclick="marcarStatus('lotado', this)">Lotado</button>
+                            <p><strong>Status:</strong> <span class="status-abrigo">Disponível</span></p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li class="cidade canoas">
+                <div class="abrigo-item can" data-cidade="Canoas" data-nome="Escola Técnica Canoas">
+                    <h2>Escola Técnica Canoas</h2>
+                    <button type="button" class="ver-detalhes" onclick="mostrarDetalhes(this)">Ver mais</button>
+                    <div class="detalhes">
+                        <p><strong>Endereço:</strong> Rua das Flores, 500, Canoas</p>
+                        <p><strong>Capacidade:</strong> 200 pessoas</p>
+                        <p><strong>Contato:</strong> (51) 3228-9101</p>
+                        <div class="feedback">
+                            <button type="button" onclick="marcarStatus('disponivel', this)">Disponível</button>
+                            <button type="button" onclick="marcarStatus('lotado', this)">Lotado</button>
+                            <p><strong>Status:</strong> <span class="status-abrigo">Disponível</span></p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li class="cidade novo-hamburgo">
+                <div class="abrigo-item nh" data-cidade="Novo Hamburgo" data-nome="Ginásio Municipal Novo Hamburgo">
+                    <h2>Ginásio Municipal Novo Hamburgo</h2>
+                    <button type="button" class="ver-detalhes" onclick="mostrarDetalhes(this)">Ver mais</button>
+                    <div class="detalhes">
+                        <p><strong>Endereço:</strong> Av. Esportes, 345, Novo Hamburgo</p>
+                        <p><strong>Capacidade:</strong> 140 pessoas</p>
+                        <p><strong>Contato:</strong> (51) 5678-1234</p>
+                        <div class="feedback">
+                            <button type="button" onclick="marcarStatus('disponivel', this)">Disponível</button>
+                            <button type="button" onclick="marcarStatus('lotado', this)">Lotado</button>
+                            <p><strong>Status:</strong> <span class="status-abrigo">Disponível</span></p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li class="cidade novo-hamburgo">
+                <div class="abrigo-item nh" data-cidade="Novo Hamburgo" data-nome="Escola Municipal Novo Hamburgo">
+                    <h2>Escola Municipal Novo Hamburgo</h2>
+                    <button type="button" class="ver-detalhes" onclick="mostrarDetalhes(this)">Ver mais</button>
+                    <div class="detalhes">
+                        <p><strong>Endereço:</strong> Rua Primavera, 200, Novo Hamburgo</p>
+                        <p><strong>Capacidade:</strong> 120 pessoas</p>
+                        <p><strong>Contato:</strong> (51) 3456-7890</p>
+                        <div class="feedback">
+                            <button type="button" onclick="marcarStatus('disponivel', this)">Disponível</button>
+                            <button type="button" onclick="marcarStatus('lotado', this)">Lotado</button>
+                            <p><strong>Status:</strong> <span class="status-abrigo">Disponível</span></p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li class="cidade novo-hamburgo">
+                <div class="abrigo-item nh" data-cidade="Novo Hamburgo" data-nome="Centro Comunitário Novo Hamburgo">
+                    <h2>Centro Comunitário Novo Hamburgo</h2>
+                    <button type="button" class="ver-detalhes" onclick="mostrarDetalhes(this)">Ver mais</button>
+                    <div class="detalhes">
+                        <p><strong>Endereço:</strong> Av. Central, 500, Novo Hamburgo</p>
+                        <p><strong>Capacidade:</strong> 140 pessoas</p>
+                        <p><strong>Contato:</strong> (51) 3457-1234</p>
+                        <div class="feedback">
+                            <button type="button" onclick="marcarStatus('disponivel', this)">Disponível</button>
+                            <button type="button" onclick="marcarStatus('lotado', this)">Lotado</button>
+                            <p><strong>Status:</strong> <span class="status-abrigo">Disponível</span></p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li class="cidade novo-hamburgo">
+                <div class="abrigo-item nh" data-cidade="Novo Hamburgo" data-nome="Ginásio Esportivo Novo Hamburgo">
+                    <h2>Ginásio Esportivo Novo Hamburgo</h2>
+                    <button type="button" class="ver-detalhes" onclick="mostrarDetalhes(this)">Ver mais</button>
+                    <div class="detalhes">
+                        <p><strong>Endereço:</strong> Rua dos Pioneiros, 300, Novo Hamburgo</p>
+                        <p><strong>Capacidade:</strong> 160 pessoas</p>
+                        <p><strong>Contato:</strong> (51) 3458-5678</p>
+                        <div class="feedback">
+                            <button type="button" onclick="marcarStatus('disponivel', this)">Disponível</button>
+                            <button type="button" onclick="marcarStatus('lotado', this)">Lotado</button>
+                            <p><strong>Status:</strong> <span class="status-abrigo">Disponível</span></p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li class="cidade novo-hamburgo">
+                <div class="abrigo-item nh" data-cidade="Novo Hamburgo" data-nome="Escola Técnica Novo Hamburgo">
+                    <h2>Escola Técnica Novo Hamburgo</h2>
+                    <button type="button" class="ver-detalhes" onclick="mostrarDetalhes(this)">Ver mais</button>
+                    <div class="detalhes">
+                        <p><strong>Endereço:</strong> Rua Industrial, 750, Novo Hamburgo</p>
+                        <p><strong>Capacidade:</strong> 180 pessoas</p>
+                        <p><strong>Contato:</strong> (51) 3459-9101</p>
+                        <div class="feedback">
+                            <button type="button" onclick="marcarStatus('disponivel', this)">Disponível</button>
+                            <button type="button" onclick="marcarStatus('lotado', this)">Lotado</button>
+                            <p><strong>Status:</strong> <span class="status-abrigo">Disponível</span></p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li class="cidade gravatai">
+                <div class="abrigo-item gra" data-cidade="Gravataí" data-nome="Escola Municipal Gravataí">
+                    <h2>Escola Municipal Gravataí</h2>
+                    <button type="button" class="ver-detalhes" onclick="mostrarDetalhes(this)">Ver mais</button>
+                    <div class="detalhes">
+                        <p><strong>Endereço:</strong> Rua Principal, 101, Gravataí</p>
+                        <p><strong>Capacidade:</strong> 130 pessoas</p>
+                        <p><strong>Contato:</strong> (51) 4321-8765</p>
+                        <div class="feedback">
+                            <button type="button" onclick="marcarStatus('disponivel', this)">Disponível</button>
+                            <button type="button" onclick="marcarStatus('lotado', this)">Lotado</button>
+                            <p><strong>Status:</strong> <span class="status-abrigo">Disponível</span></p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li class="cidade gravatai">
+                <div class="abrigo-item gra" data-cidade="Gravataí" data-nome="Escola Municipal Gravataí">
+                    <h2>Escola Municipal Gravataí</h2>
+                    <button type="button" class="ver-detalhes" onclick="mostrarDetalhes(this)">Ver mais</button>
+                    <div class="detalhes">
+                        <p><strong>Endereço:</strong> Rua dos Pinheiros, 150, Gravataí</p>
+                        <p><strong>Capacidade:</strong> 120 pessoas</p>
+                        <p><strong>Contato:</strong> (51) 3101-2345</p>
+                        <div class="feedback">
+                            <button type="button" onclick="marcarStatus('disponivel', this)">Disponível</button>
+                            <button type="button" onclick="marcarStatus('lotado', this)">Lotado</button>
+                            <p><strong>Status:</strong> <span class="status-abrigo">Disponível</span></p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li class="cidade gravatai">
+                <div class="abrigo-item gra" data-cidade="Gravataí" data-nome="Centro Comunitário Gravataí">
+                    <h2>Centro Comunitário Gravataí</h2>
+                    <button type="button" class="ver-detalhes" onclick="mostrarDetalhes(this)">Ver mais</button>
+                    <div class="detalhes">
+                        <p><strong>Endereço:</strong> Av. Central, 220, Gravataí</p>
+                        <p><strong>Capacidade:</strong> 140 pessoas</p>
+                        <p><strong>Contato:</strong> (51) 3102-3456</p>
+                        <div class="feedback">
+                            <button type="button" onclick="marcarStatus('disponivel', this)">Disponível</button>
+                            <button type="button" onclick="marcarStatus('lotado', this)">Lotado</button>
+                            <p><strong>Status:</strong> <span class="status-abrigo">Disponível</span></p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li class="cidade gravatai">
+                <div class="abrigo-item gra" data-cidade="Gravataí" data-nome="Ginásio Esportivo Gravataí">
+                    <h2>Ginásio Esportivo Gravataí</h2>
+                    <button type="button" class="ver-detalhes" onclick="mostrarDetalhes(this)">Ver mais</button>
+                    <div class="detalhes">
+                        <p><strong>Endereço:</strong> Rua São Francisco, 350, Gravataí</p>
+                        <p><strong>Capacidade:</strong> 160 pessoas</p>
+                        <p><strong>Contato:</strong> (51) 3103-4567</p>
+                        <div class="feedback">
+                            <button type="button" onclick="marcarStatus('disponivel', this)">Disponível</button>
+                            <button type="button" onclick="marcarStatus('lotado', this)">Lotado</button>
+                            <p><strong>Status:</strong> <span class="status-abrigo">Disponível</span></p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li class="cidade gravatai">
+                <div class="abrigo-item gra" data-cidade="Gravataí" data-nome="Escola Técnica Gravataí">
+                    <h2>Escola Técnica Gravataí</h2>
+                    <button type="button" class="ver-detalhes" onclick="mostrarDetalhes(this)">Ver mais</button>
+                    <div class="detalhes">
+                        <p><strong>Endereço:</strong> Rua Industrial, 480, Gravataí</p>
+                        <p><strong>Capacidade:</strong> 180 pessoas</p>
+                        <p><strong>Contato:</strong> (51) 3104-5678</p>
+                        <div class="feedback">
+                            <button type="button" onclick="marcarStatus('disponivel', this)">Disponível</button>
+                            <button type="button" onclick="marcarStatus('lotado', this)">Lotado</button>
+                            <p><strong>Status:</strong> <span class="status-abrigo">Disponível</span></p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li class="cidade viamao">
+                <div class="abrigo-item via" data-cidade="Viamão" data-nome="Centro de Acolhimento Viamão">
+                    <h2>Centro de Acolhimento Viamão</h2>
+                    <button type="button" class="ver-detalhes" onclick="mostrarDetalhes(this)">Ver mais</button>
+                    <div class="detalhes">
+                        <p><strong>Endereço:</strong> Rua Paz, 222, Viamão</p>
+                        <p><strong>Capacidade:</strong> 170 pessoas</p>
+                        <p><strong>Contato:</strong> (51) 7654-9876</p>
+                        <div class="feedback">
+                            <button type="button" onclick="marcarStatus('disponivel', this)">Disponível</button>
+                            <button type="button" onclick="marcarStatus('lotado', this)">Lotado</button>
+                            <p><strong>Status:</strong> <span class="status-abrigo">Disponível</span></p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li class="cidade viamao">
+                <div class="abrigo-item via" data-cidade="Viamão" data-nome="Escola Municipal Viamão">
+                    <h2>Escola Municipal Viamão</h2>
+                    <button type="button" class="ver-detalhes" onclick="mostrarDetalhes(this)">Ver mais</button>
+                    <div class="detalhes">
+                        <p><strong>Endereço:</strong> Rua dos Lírios, 90, Viamão</p>
+                        <p><strong>Capacidade:</strong> 110 pessoas</p>
+                        <p><strong>Contato:</strong> (51) 3345-6789</p>
+                        <div class="feedback">
+                            <button type="button" onclick="marcarStatus('disponivel', this)">Disponível</button>
+                            <button type="button" onclick="marcarStatus('lotado', this)">Lotado</button>
+                            <p><strong>Status:</strong> <span class="status-abrigo">Disponível</span></p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            
+            <li class="cidade viamao">
+                <div class="abrigo-item via" data-cidade="Viamão" data-nome="Centro Comunitário Viamão">
+                    <h2>Centro Comunitário Viamão</h2>
+                    <button type="button" class="ver-detalhes" onclick="mostrarDetalhes(this)">Ver mais</button>
+                    <div class="detalhes">
+                        <p><strong>Endereço:</strong> Av. do Parque, 205, Viamão</p>
+                        <p><strong>Capacidade:</strong> 120 pessoas</p>
+                        <p><strong>Contato:</strong> (51) 3346-7890</p>
+                        <div class="feedback">
+                            <button type="button" onclick="marcarStatus('disponivel', this)">Disponível</button>
+                            <button type="button" onclick="marcarStatus('lotado', this)">Lotado</button>
+                            <p><strong>Status:</strong> <span class="status-abrigo">Disponível</span></p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            
+            <li class="cidade viamao">
+                <div class="abrigo-item via" data-cidade="Viamão" data-nome="Ginásio Esportivo Viamão">
+                    <h2>Ginásio Esportivo Viamão</h2>
+                    <button type="button" class="ver-detalhes" onclick="mostrarDetalhes(this)">Ver mais</button>
+                    <div class="detalhes">
+                        <p><strong>Endereço:</strong> Rua São Pedro, 330, Viamão</p>
+                        <p><strong>Capacidade:</strong> 150 pessoas</p>
+                        <p><strong>Contato:</strong> (51) 3347-8901</p>
+                        <div class="feedback">
+                            <button type="button" onclick="marcarStatus('disponivel', this)">Disponível</button>
+                            <button type="button" onclick="marcarStatus('lotado', this)">Lotado</button>
+                            <p><strong>Status:</strong> <span class="status-abrigo">Disponível</span></p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            
+            <li class="cidade viamao">
+                <div class="abrigo-item via" data-cidade="Viamão" data-nome="Escola Técnica Viamão">
+                    <h2>Escola Técnica Viamão</h2>
+                    <button type="button" class="ver-detalhes" onclick="mostrarDetalhes(this)">Ver mais</button>
+                    <div class="detalhes">
+                        <p><strong>Endereço:</strong> Rua das Palmeiras, 420, Viamão</p>
+                        <p><strong>Capacidade:</strong> 180 pessoas</p>
+                        <p><strong>Contato:</strong> (51) 3348-9012</p>
+                        <div class="feedback">
+                            <button type="button" onclick="marcarStatus('disponivel', this)">Disponível</button>
+                            <button type="button" onclick="marcarStatus('lotado', this)">Lotado</button>
+                            <p><strong>Status:</strong> <span class="status-abrigo">Disponível</span></p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </main>
+
+    <script src="mapeamento.js"></script>
+</body>
+
+</html>

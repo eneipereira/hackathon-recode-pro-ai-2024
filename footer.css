@@ -1,0 +1,14 @@
+footer {
+  margin: 48px 64px;
+  border-width: 1px 0px 0px 0px;
+  border-style: solid;
+  border-color: #1c1c1c;
+  background-color: white;
+  text-align: center;
+}
+
+footer img {
+  width: 32px;
+  height: 32px;
+  margin: 16px;
+}

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comunidade de Ajuda</title>
+  <link rel="icon" href="../../img/logo.png">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="comunidade.css">
+  <link rel="stylesheet" href="../../navbar.css">
+</head>
+
+<body>
+  <div class="navbar">
+    <img src="../../img/logo.png" alt="logo"/>
+    <div class="logo-name">Rede<b>Seg</b></div>
+    <a class="alert" href="../../index.html#sos">S.O.S.</a>
+    <div class="dropdown">
+        <button class="dropbtn">Rede de Solidariedade
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+            <a href="./comunidade.html">Cadastre-se na rede</a>
+            <a href="#">Experiências, histórias e dicas</a>
+        </div>
+    </div>
+    <div class="dropdown">
+        <button class="dropbtn">Recursos de Emergência
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+            <a href="../mapeamento/mapeamento.html">Abrigos disponíveis</a>
+            <a href="#">Rotas de fuga</a>
+            <a href="#">Recomendações de segurança</a>
+        </div>
+    </div>
+    <a href="../../index.html">Início</a>
+  </div>
+
+  <header class="header-cadastro">
+    <h1>Cadastre-se na rede</h1>
+  </header>
+
+  <div class="center-div">
+    <div class="container">
+      <h1>Comunidade de Ajuda</h1>
+      <form id="helpForm">
+        <div class="input-group">
+          <input type="text" id="nome" name="nome" required placeholder="Nome completo">
+          <i class='bx bxs-user'></i>
+        </div>
+  
+        <div class="input-group">
+          <input type="tel" id="celular" name="celular" required placeholder="Número de celular">
+          <i class='bx bxs-phone'></i>
+        </div>
+  
+        <div class="input-group">
+          <input type="email" id="email" name="email" required placeholder="Digite seu e-mail">
+          <i class='bx bxs-envelope'></i>
+        </div>
+  
+        <div class="input-group">
+          <textarea id="localizacao" name="localizacao" placeholder="Digite sua localização" required></textarea>
+          <i class='bx bxs-map'></i>
+        </div>
+  
+        <div class="input-group radio-group">
+          <div>
+            <input type="radio" id="preciso_ajuda" name="status" value="Preciso de ajuda" required>
+            <label for="preciso_ajuda">Preciso de ajuda</label>
+          </div>
+          <div>
+            <input type="radio" id="quero_ajudar" name="status" value="Quero ajudar" required>
+            <label for="quero_ajudar">Quero ajudar</label>
+          </div>
+        </div>
+  
+        <input type="submit" value="Enviar">
+      </form>
+    </div>
+  </div>
+  
+  <section class="submissions">
+    <h2>Solicitações e Apoio:</h2>
+    <div id="submissionList"></div>
+  </section>
+
+  <script src="comunidade.js"></script>
+</body>
+
+</html>
